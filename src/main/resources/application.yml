@@ -1,16 +1,16 @@
 spring:
-  mvc:
-    view:
-      prefix: /WEB-INF/jsp/
-      suffix: .jsp
   datasource:
     schema: classpath:import.sql
+  devtools:
+    livereload:
+      enabled: true
 mybatis:
   config-location: classpath:mybatis-config.xml
-
 ---
 spring.profiles: local
 spring:
+  thymeleaf:
+    cache: false
   h2:
     console:
       enabled: true
@@ -18,6 +18,8 @@ spring:
 ---
 spring.profiles: dev
 spring:
+  thymeleaf:
+    cache: false
   datasource:
     platform: mysql
     url: jdbc:mysql://localhost:3306/ohmyplay
